@@ -8,10 +8,9 @@ export default function App() {
   }
   return (
     <div>
-      <div
-        className={"flex justify-center items-center h-screen " + color}
-      ></div>
-      <ColorButtonPanel handleClick={handleClick} />
+      <div className={"flex justify-center items-center h-screen " + color}>
+        <ColorButtonPanel handleClick={handleClick} />
+      </div>
     </div>
   );
 }
