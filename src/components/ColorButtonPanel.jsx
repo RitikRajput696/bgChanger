@@ -1,13 +1,10 @@
-import { useState } from "react";
 import ColorButton from "./ColorButton";
 
-function ColorButtonPanel() {
-  const [color, setColor] = useState("bg-white");
-
+function ColorButtonPanel({ handleClick }) {
   const colorObj = [
     {
       text: "Blue",
-      colorValue: "bg-blue-500",
+      colorValue: "bg-blue-400",
     },
     {
       text: "Teal",
@@ -21,21 +18,29 @@ function ColorButtonPanel() {
       text: "fuchsia",
       colorValue: "bg-fuchsia-500",
     },
+    {
+      text: "Pink",
+      colorValue: "bg-pink-400",
+    },
+    {
+      text: "Emerland",
+      colorValue: "bg-emerald-400",
+    },
   ];
 
   return (
     <>
-      <div
-        className={"flex justify-center items-center h-screen " + color}
-      ></div>
-      <div className=" rounded-full flex justify-center py-5 px-4 max-w-fit fixed bottom-12 gap-2 border shadow-lg left-1/2 -translate-x-1/2 bg-white">
+      <div className=" rounded-full flex justify-center items-center flex-col sm:flex-row py-5 px-4 max-w-fit fixed bottom-12 gap-2 border shadow-lg left-1/2 -translate-x-1/2 bg-white ">
         {colorObj.map((obj, i) => {
           return (
             <ColorButton
               key={i}
               buttonBg={obj.colorValue}
               colorName={obj.text}
-              onClick={() => setColor(colorObj[i].colorValue)}
+              onClick={() => {
+                // export data to app.jsx
+                handleClick(colorObj[i].colorValue);
+              }}
             />
           );
         })}

@@ -4,7 +4,8 @@ function ColorButton({ colorName = "white", buttonBg = "white", onClick }) {
   return (
     <button
       className={
-        "border-black border px-4 py-2 text-xl rounded-full " + buttonBg
+        "border-gray-400 border px-4 py-2 text-xl rounded-full shadow-md hover:scale-105 transition-all " +
+        buttonBg
       }
       onClick={onClick}
     >
